@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even-Odd Array</title>
+</head>
+<body>
+
+  <label for="numberInput">Enter Numbers (comma-separated):</label>
+  <input type="text" id="numberInput">
+  <button onclick="processNumbers()">Process</button>
+
+  <h2>Even Array:</h2>
+  <div id="evenArray"></div>
+
+  <h2>Odd Array:</h2>
+  <div id="oddArray"></div>
+
+  <script>
+    function processNumbers() {
+      // Get input value and split into an array
+      const input = document.getElementById('numberInput').value;
+      const numbers = input.split(',').map(Number);
+
+      // Separate even and odd numbers
+      const evenArray = numbers.filter(num => num % 2 === 0);
+      const oddArray = numbers.filter(num => num % 2 !== 0);
+
+      // Display even and odd arrays
+      document.getElementById('evenArray').innerText = evenArray.join(', ');
+      document.getElementById('oddArray').innerText = oddArray.join(', ');
+    }
+  </script>
+
+</body>
+</html>
